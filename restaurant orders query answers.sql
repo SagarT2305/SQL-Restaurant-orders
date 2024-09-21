@@ -74,12 +74,6 @@
 	where cnt>12
 
 
---Combine the menu_items and order_details tables into a single table.
-	 select o.*,m.item_name, m.category, m.price 
-	 from menu_items m
-	 left join order_details o on m.menu_item_id = o.item_id
-
-
 --What were the least and most ordered items? What categories were they in?
 	
 	with cte as( 
