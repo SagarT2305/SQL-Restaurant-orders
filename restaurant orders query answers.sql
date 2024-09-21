@@ -29,7 +29,7 @@
 	from menu_items
 	where category='Italian' and price=(select max(price) from menu_items where category='Italian')
 	union
-	select 'least_exp' as type, item_name
+	select 'least_exp' as type, string_agg(item_name,', ') as item_name
 	from menu_items
 	where category='Italian' and price=(select min(price) from menu_items where category='Italian')
 	
